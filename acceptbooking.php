@@ -24,6 +24,6 @@ $conn->close();
 ?>
 <html>
 <body>
-	<h1>Heading to your location</h1>
+	<h1>Heading to your rider's location</h1>
 	</body>
 </html>
