@@ -18,9 +18,9 @@ if(isset($_SESSION['loginUser'])) {
 <body>
 	<table>
   <tr>
-    <th>Rider Phone Number</th>
-    <th>Rider Current Location</th>
-    <th>Rider Destination</th>
+    <th>Rider Phone Number :</th>
+    <th>Rider Current Location :</th>
+    <th>Rider Destination :</th>
     <th>Price</th>
     
   </tr>
