@@ -21,7 +21,7 @@ if ($conn->multi_query($sql) === TRUE) {
 	$_SESSION['loginUser'] =$_POST["phone"] ;
 
 	echo 'session create'.$_SESSION['loginUser'];
-	header("Location: http://localhost/ridesnow/booking.php");
+	header("Location: http://localhost/ridenow/booking.php");
 	
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
@@ -47,7 +47,7 @@ if ($conn->multi_query($sql) === TRUE) {
 	$_SESSION['loginUser'] =$_POST["driverphone"] ;
 
 	echo 'session create'.$_SESSION['loginUser'];
-	header("Location: http://localhost/ridesnow/acceptRider.php");
+	header("Location: http://localhost/ridenow/acceptRider.php");
 	
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

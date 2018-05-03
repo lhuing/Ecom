@@ -11,7 +11,7 @@ echo "Connected Successfully";
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Cab Booking Form Responsive Widget Template :: W3layouts</title>
+<title>Cab Booking</title>
 <!-- Meta tag Keywords -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

@@ -19,7 +19,7 @@
 				session_start();
 				$_SESSION['loginUser']= $_POST["phone"];
 				
-				header ("Location: http://localhost/ridesnow/booking.php");
+				header ("Location: http://localhost/ridenow/booking.php");
 				
 		
 			}
@@ -39,7 +39,7 @@
 				session_start();
 				$_SESSION['loginUser']= $_POST["driverphone"];
 				
-				header ("Location: http://localhost/ridesnow/acceptRider.php");
+				header ("Location: http://localhost/ridenow/acceptRider.php");
 				
 		
 			}
