@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2018 at 11:55 AM
+-- Generation Time: May 03, 2018 at 05:31 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ridesnow`
+-- Database: `ridenow`
 --
 
 -- --------------------------------------------------------
@@ -39,6 +39,13 @@ CREATE TABLE `booking` (
   `driverPhone` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`bookingID`, `phone`, `platformName`, `current`, `destination`, `price`, `pickupStatus`, `driverPhone`) VALUES
+(19, '1231231231', 'BlaBlaCar', 'K6 UPM', 'KTM Serdang', 5.00, 'Picked', '3213213213');
+
 -- --------------------------------------------------------
 
 --
@@ -52,6 +59,13 @@ CREATE TABLE `car` (
   `colour` varchar(10) NOT NULL,
   `year` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `car`
+--
+
+INSERT INTO `car` (`carID`, `carType`, `platNo`, `colour`, `year`) VALUES
+(1, 'Myvi', 'NLH 2020', 'blue', '2016');
 
 -- --------------------------------------------------------
 
@@ -67,6 +81,13 @@ CREATE TABLE `driver` (
   `carID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `driver`
+--
+
+INSERT INTO `driver` (`driverID`, `driverName`, `driverPhone`, `password`, `carID`) VALUES
+(2, 'lololo', '3213213213', '123123', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -81,6 +102,17 @@ CREATE TABLE `platform` (
   `price` double(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `platform`
+--
+
+INSERT INTO `platform` (`platformID`, `platformName`, `current`, `destination`, `price`) VALUES
+(1, 'Grab', 'K6 UPM', 'KTM Serdang', 9.00),
+(2, 'MyCar', 'K6 UPM', 'KTM Serdang', 8.00),
+(3, 'BlaBlaCar', 'K6 UPM', 'KTM Serdang', 5.00),
+(4, 'Grab', 'K6 UPM', 'IOI', 12.00),
+(5, 'MyCar', 'K6 UPM', 'IOI', 10.00);
+
 -- --------------------------------------------------------
 
 --
@@ -93,6 +125,13 @@ CREATE TABLE `user` (
   `phone` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`userID`, `username`, `phone`, `password`) VALUES
+(5, 'lololo', '1231231231', '123123');
 
 --
 -- Indexes for dumped tables
@@ -137,7 +176,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `bookingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `bookingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `car`
@@ -149,7 +188,7 @@ ALTER TABLE `car`
 -- AUTO_INCREMENT for table `driver`
 --
 ALTER TABLE `driver`
-  MODIFY `driverID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `driverID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `platform`
@@ -161,7 +200,7 @@ ALTER TABLE `platform`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
