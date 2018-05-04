@@ -12,7 +12,7 @@ if(isset($_SESSION['loginUser'])) {
   }
 $phone = $_SESSION['loginUser'];
 
-  if(isset($_POST['ok'])) {
+ 
   	$result = mysqli_query($conn, "SELECT * FROM booking WHERE phone='$phone' order by bookingID desc limit 1");
   	$res = mysqli_fetch_array($result);
   	$pickupStatus = $res['pickupStatus'];
@@ -23,6 +23,6 @@ $phone = $_SESSION['loginUser'];
 	else if ($pickupStatus == 'Picked'){
 		header("Location: http://localhost/ridenow/gotDriver.php");
 	}
-  }
+ 
 
 ?>

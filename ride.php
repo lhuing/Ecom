@@ -24,16 +24,11 @@ $sql = "INSERT INTO booking (phone, platformName, current, destination, price) V
 		
 if ($conn->multi_query($sql) === TRUE) {
     echo "New record created successfully ";
-	//session_start();
-//	$_SESSION['loginUser'] =$_POST["username"] ;
-
-//	echo 'session create'.$_SESSION['loginUser'];
-	//header("Location: http://localhost/ridesnow/booking.php");
+	
 	
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
-//	echo"<script> alert('This phone number has been used')</script>";
-//	echo '<script>history.back();</script>';
+
 	
 }
 
@@ -45,10 +40,13 @@ $conn->close();
 
 
 <html>
+<head>
+	<meta http-equiv="refresh" content="0; URL='http://localhost/ridenow/pickupStatus.php'"/> 
+	</head>
+
 <body>
 	<h1>We are finding a driver for you...</h1>
-	<form action="pickupStatus.php" method="post">
-	<input type="submit" name="ok" value="OK">
+	
 	</form>
 
 	</body>
