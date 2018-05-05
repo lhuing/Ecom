@@ -1,17 +1,12 @@
 <?php
+
 include 'db_connection.php';
 
 $conn = OpenCon();
 
 echo "Connected Successfully";
 
-session_start();
-if(isset($_SESSION['loginUser'])) {
-  echo "Your session is running " . $_SESSION['loginUser'];
-  }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,61 +29,48 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- online-fonts -->
 <link href="//fonts.googleapis.com/css?family=Amaranth:400,400i,700,700i" rel="stylesheet">
 <!--//online-fonts -->
+
+<style>
+       
+        .reveal-if-active{
+            display:none;
+        }
+    </style>
+
+
 </head>
 <body>
-<div class="nav">
-	<input type="button" value="My Account" onClick="document.location.href='profile.php'">
-	<input type="button" value="Payment Method" onClick="document.location.href='paymentMethod.php'">
-</div>
-
-
 <div class="header">
-	<h1>My Account</h1>
+	<h1>Cab Booking Form</h1>
 </div>
 
 <div class="w3-main">
 	<!-- Main -->
 	<div class="about-bottom">
 		<div class="w3l_about_bottom_right two">
-			<h2 class="tittle"><img src="images/cab.png" alt=""><span><?php echo " "?></span></h2>
+			<h2 class="tittle"><img src="images/cab.png" alt=""><span>Book Cab Now</span></h2>
 			<div class="book-form">
 
-			    <form action="verifyLocation.php" method="post">
-										
-					<div class="form-date-w3-agileits">
-						<div class="form-agileits">
-							<label> Pickup Location :</label>
-						</div>
-						<div class="form-agileits-2">
-							<input type="text" name="current" placeholder="Enter an origin location" required="">
-						</div>
-						<div class="clear"> </div>
+
+			<form action="payment.php" method="post">
+			  <input type="radio" name="paymentmethod" id="cash" value="cash" required="" checked="">
+				<label for="cash">Cash</label>
+    			<br>
+    			<input type="radio" name="paymentmethod" id="card" value="card">
+				<label for="cash">Credit/Debit Card</label>
+					<div class="reveal-if-active">
+						
+ 					 <input type="text" name="cardnum" id="cardnum" placeholder="Card Number">			
+ 					 <input type="text" name="cvv" id="cvv" placeholder="CVV">
+ 					 <label for="cash">Expiry Date</label>
+ 					  <input type="month" name="exp" id="exp">
 					</div>
-					<div class="form-date-w3-agileits">
-						<div class="form-agileits">
-							<label> Drop Location :</label>
-						</div>
-						<div class="form-agileits-2">
-							<input type="text" name="destination" placeholder="Enter a destination location" required="">
-						</div>
-						<div class="clear"> </div>
-					</div>
-							
-					<div class="make">
-						  <input type="submit" name="search" value="Book My Cab">
-					</div>
+					<br>
+					<input type="submit" name="payment" value="Save">
 				</form>
+
+
 			</div>
-
-<table>
-	<tr>
-		<td>
-
-		</td>
-	</tr>
-</table>
-
-
 		</div>
 		<div class="clear"> </div>
 	</div>
@@ -97,13 +79,24 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 	<!-- js-scripts-->
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-				
+		
+	<script>
+ $(document).ready(function () {
+            $('input[type=radio][name=paymentmethod]').change(function () {
+                if (this.value == 'cash') {        
+                    $('.reveal-if-active').hide();
+                }
+                else if (this.value == 'card') {
+                    $('.reveal-if-active').show();
+                }
+            });
+        });
+</script>
+
+<script>
+	</script>
 			
 	<!-- //js-scripts-->
-
-
-
-
 	
 </body>
 </html>
