@@ -64,6 +64,16 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 						<div class="clear"> </div>
 					</div>
 
+					<div class="form-date-w3-agileits">
+						<div class="form-agileits">
+							<label> Email Address :</label>
+						</div>
+						<div class="form-agileits-2">
+							<input type="email" name="email" id="email"  placeholder="Enter Email Address" required="">
+						</div>
+						<div class="clear"> </div>
+					</div>
+
 							<div class="form-date-w3-agileits">
 						<div class="form-agileits">
 							<label> Password :</label>

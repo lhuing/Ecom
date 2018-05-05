@@ -9,11 +9,20 @@ session_start();
 if(isset($_SESSION['loginUser'])) {
   echo "Your session is running " . $_SESSION['loginUser'];
   }
+
+$phone = $_SESSION['loginUser'];
+$get_userinfo= "select * from user where phone = '$phone'";
+
+		$run_getuser = mysqli_query($conn,$get_userinfo);
+		
+	$result = mysqli_fetch_array($run_getuser);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Cab Booking</title>
+<title>My Account</title>
 <!-- Meta tag Keywords -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -38,39 +47,42 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 </div>
 
 <div class="header">
-	<h1>Cab Booking Form</h1>
+	<h1>My Account</h1>
 </div>
 
 <div class="w3-main">
 	<!-- Main -->
 	<div class="about-bottom">
 		<div class="w3l_about_bottom_right two">
-			<h2 class="tittle"><img src="images/cab.png" alt=""><span>Book Cab Now</span></h2>
+			<h2 class="tittle"><span>
+				<?php echo $result['username'];?>
+					
+				</span></h2>
 			<div class="book-form">
 
 			    <form action="verifyLocation.php" method="post">
 										
 					<div class="form-date-w3-agileits">
 						<div class="form-agileits">
-							<label> Pickup Location :</label>
+							<label> Mobile Number :</label>
 						</div>
 						<div class="form-agileits-2">
-							<input type="text" name="current" placeholder="Enter an origin location" required="">
+							<input type="text" placeholder="<?php echo $result['phone'];?>">
 						</div>
 						<div class="clear"> </div>
 					</div>
 					<div class="form-date-w3-agileits">
 						<div class="form-agileits">
-							<label> Drop Location :</label>
+							<label> Email Address :</label>
 						</div>
 						<div class="form-agileits-2">
-							<input type="text" name="destination" placeholder="Enter a destination location" required="">
+							<?php echo $result['email'];?>
 						</div>
 						<div class="clear"> </div>
 					</div>
 							
 					<div class="make">
-						  <input type="submit" name="search" value="Book My Cab">
+						  <input type="button" name="back" onClick="document.location.href='booking.php'" value="Back">
 					</div>
 				</form>
 			</div>
