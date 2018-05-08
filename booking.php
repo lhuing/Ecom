@@ -11,8 +11,6 @@ if(isset($_SESSION['loginUser'])) {
   }
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,8 +35,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 </head>
 <body>
 <div class="nav">
-	<input type="button" value="My Account" onClick="document.location.href='profile.php'">
-	<input type="button" value="Payment Method" onClick="document.location.href='paymentMethod.php'">
+<input type="button" value="My Account" onClick="document.location.href='profile.php'">
+<input type="button" value="Payment Method" onClick="document.location.href='paymentMethod.php'">
+<input type="button" value="Logout" onClick="document.location.href='logout.php'">
 </div>
 
 

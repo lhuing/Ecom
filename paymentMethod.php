@@ -6,6 +6,18 @@ $conn = OpenCon();
 
 echo "Connected Successfully";
 
+session_start();
+if(isset($_SESSION['loginUser'])) {
+  echo "Your session is running " . $_SESSION['loginUser'];
+  }
+
+$phone = $_SESSION['loginUser'];
+$get_paymentMethod = "select paymentMethod from user where phone = '$phone'";
+
+		$run_getMethod = mysqli_query($conn,$get_paymentMethod);
+		
+	$result = mysqli_fetch_array($run_getMethod);
+
 ?>
 
 <!DOCTYPE html>
@@ -53,10 +65,10 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 
 			<form action="payment.php" method="post">
-			  <input type="radio" name="paymentmethod" id="cash" value="cash" required="" checked="">
+			  <input type="radio" name="paymentmethod" id="cash" value="cash" required="" <?php echo ($result['paymentMethod']=='cash')?'checked':'' ?>>
 				<label for="cash">Cash</label>
     			<br>
-    			<input type="radio" name="paymentmethod" id="card" value="card">
+    			<input type="radio" name="paymentmethod" id="card" value="card" <?php echo ($result['paymentMethod']=='card')?'checked':'' ?>>
 				<label for="cash">Credit/Debit Card</label>
 					<div class="reveal-if-active">
 						
