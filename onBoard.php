@@ -3,6 +3,7 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Directions service</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -93,11 +94,19 @@ echo "
                         </tbody>
                         ";?>
 
-
+<input type="button" id="sos" value="SOS">
     </table>
 </div>
 
     <div id="map"></div>
+<script>
+  $("#sos").click(function() {
+  alert("Make an emergency call?");
+  alert("Your have called your emergency contact person");
+  window.location.replace("onBoard.php");
+});
+</script>
+
    <script>
 
       function initMap() {
@@ -122,9 +131,7 @@ echo "
         });
       }
     </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd8CliF9no7A0FwNdp3OSbXoCeSWwVZzs&callback=initMap">
-    </script>
+ 
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd8CliF9no7A0FwNdp3OSbXoCeSWwVZzs&callback=initMap">
     </script>
