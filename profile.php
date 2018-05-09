@@ -69,7 +69,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 							<label> Mobile Number :</label>
 						</div>
 						<div class="form-agileits-2">
-							<input type="text" placeholder="<?php echo $result['phone'];?>">
+							<?php echo $result['phone'];?>
 						</div>
 						<div class="clear"> </div>
 					</div>
