@@ -12,9 +12,11 @@ if( isset($_POST["register"]) ){
 		$phone = $_POST["phone"];
 		$email = $_POST["email"];
 		$password = $_POST["password"];
+		$emergencyPhone = $_POST["emerPhone"];
+		$emergencyName = $_POST["emerName"];
   
 
-$sql = "INSERT INTO user (username, phone, email, password) VALUES ('$username', '$phone', '$email', '$password')";
+$sql = "INSERT INTO user (username, phone, email, password, emergencyPhone, emergencyName) VALUES ('$username', '$phone', '$email', '$password', '$emergencyPhone', '$emergencyName')";
 		
 if ($conn->multi_query($sql) === TRUE) {
     echo "New record created successfully ";

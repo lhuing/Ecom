@@ -40,11 +40,11 @@
 
 $conn = OpenCon();
 
-echo "Connected Successfully";
+//echo "Connected Successfully";
 
 session_start();
 if(isset($_SESSION['loginUser'])) {
-  echo "Your session is running " . $_SESSION['loginUser'];
+//  echo "Your session is running " . $_SESSION['loginUser'];
   }
 
         $phone = $_SESSION['loginUser'];

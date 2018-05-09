@@ -83,6 +83,27 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 						</div>
 						<div class="clear"> </div>
 					</div>
+
+
+					<div class="form-date-w3-agileits">
+						<div class="form-agileits">
+							<label> Emergency Contact <br> Phone Number:</label>
+						</div>
+						<div class="form-agileits-2">
+							<input type="text" name="emerPhone" placeholder="Enter Emergency Contact Number" required="">
+						</div>
+						<div class="clear"> </div>
+					</div>
+
+					<div class="form-date-w3-agileits">
+						<div class="form-agileits">
+							<label> Emergency Contact <br> Name:</label>
+						</div>
+						<div class="form-agileits-2">
+							<input type="text" name="emerName" placeholder="Enter Emergency Contact Name" required="">
+						</div>
+						<div class="clear"> </div>
+					</div>
 							
 					<div class="make">
 						  <input type="submit" name="register" value="Register">
