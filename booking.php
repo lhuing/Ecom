@@ -21,6 +21,72 @@ if(isset($_SESSION['loginUser'])) {
 <meta name="keywords" content="Cab Booking Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+
+ 
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="typeahead.min.js"></script>
+    <script>
+    $(document).ready(function(){
+    $('input.typeahead').typeahead({
+        name: 'current',
+        remote:'search.php?key=%QUERY',
+        limit : 10
+    });
+});
+    </script>
+    <style type="text/css">
+.bs-example{
+    font-family: sans-serif;
+    position: relative;
+    margin: 50px;
+}
+.typeahead, .tt-query, .tt-hint {
+    border: 2px solid #CCCCCC;
+    border-radius: 8px;
+    font-size: 24px;
+    height: 30px;
+    line-height: 30px;
+    outline: medium none;
+    padding: 8px 12px;
+    width: 396px;
+}
+.typeahead {
+    background-color: #FFFFFF;
+}
+.typeahead:focus {
+    border: 2px solid #0097CF;
+}
+.tt-query {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+    color: #999999;
+}
+.tt-dropdown-menu {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 12px;
+    padding: 8px 0;
+    width: 422px;
+}
+.tt-suggestion {
+    font-size: 24px;
+    line-height: 24px;
+    padding: 3px 20px;
+}
+.tt-suggestion.tt-is-under-cursor {
+    background-color: #0097CF;
+    color: #FFFFFF;
+}
+.tt-suggestion p {
+    margin: 0;
+}
+</style>
 <!-- Meta tag Keywords -->
 
 <!-- css files -->
@@ -59,16 +125,26 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 							<label> Pickup Location :</label>
 						</div>
 						<div class="form-agileits-2">
-							<input type="text" name="current" placeholder="Enter an origin location" required="">
+
+   
+    
+        <input type="text" name="current" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Enter an origin location" required="">
+    
+ 
+
+					
 						</div>
 						<div class="clear"> </div>
 					</div>
+
+
+
 					<div class="form-date-w3-agileits">
 						<div class="form-agileits">
 							<label> Drop Location :</label>
 						</div>
 						<div class="form-agileits-2">
-							<input type="text" name="destination" placeholder="Enter a destination location" required="">
+						   <input type="text" name="destination" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Enter a destination location" required="">
 						</div>
 						<div class="clear"> </div>
 					</div>
@@ -94,11 +170,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 </div>
 <!-- //Main -->
 
-	<!-- js-scripts-->
-		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-				
-			
-	<!-- //js-scripts-->
+
 
 
 

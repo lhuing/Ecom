@@ -103,7 +103,7 @@ echo "
   $("#sos").click(function() {
   alert("Make an emergency call?");
   alert("Your have called your emergency contact person");
-  window.location.replace("onBoard.php");
+  window.location.replace("emergencySms.php");
 });
 </script>
 
