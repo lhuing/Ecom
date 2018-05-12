@@ -94,17 +94,26 @@ echo "
                         </tbody>
                         ";?>
 
-<input type="button" id="sos" value="SOS">
+<button onclick="myFunction()">SOS</button>
     </table>
 </div>
 
     <div id="map"></div>
 <script>
-  $("#sos").click(function() {
-  alert("Make an emergency call?");
+ function myFunction() {
+  
+  
+  var r = confirm("Make an emergency call?");
+  if (r == true) {
   alert("Your have called your emergency contact person");
-  window.location.replace("emergencySms.php");
-});
+   window.location.replace("emergencySms.php");
+}
+   else {
+       window.location.replace("onBoard.php");
+    }
+    
+}
+
 </script>
 
    <script>

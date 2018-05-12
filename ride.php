@@ -47,7 +47,7 @@ $conn->close();
 <body>
 	<h1>We are finding a driver for you...</h1>
 	
-	</form>
+
 
 	</body>
 </html>
