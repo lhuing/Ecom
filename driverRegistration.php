@@ -102,7 +102,7 @@ function checkdupdriverphone() {
         },
         success: function(data) {
 			if(data == "false"){
-			if((driverphone.length)<10){
+			if((driverphone.length)<15){
 			document.getElementById("duplabelphone").style.color = "red";
 			document.getElementById("duplabelphone").innerHTML = "Phone number must be 10 digits";
 			}

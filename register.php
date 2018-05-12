@@ -58,6 +58,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 							<label> Phone Number :</label>
 						</div>
 						<div class="form-agileits-2">
+							<input type="text" name="intno" value="+60" readonly>
 							<input type="text" name="phone" id="phone" oninput="checkdupphone()" placeholder="Enter Phone Number" required="">
 							<small ><p id="duplabelphone"></p></small>
 						</div>
@@ -133,9 +134,9 @@ function checkdupphone() {
         },
         success: function(data) {
 			if(data == "false"){
-			if((phone.length)<10){
+			if((phone.length)<9){
 			document.getElementById("duplabelphone").style.color = "red";
-			document.getElementById("duplabelphone").innerHTML = "Phone number must be 10 digits";
+			document.getElementById("duplabelphone").innerHTML = "Phone number must be more than 9 digits";
 			}
 			else {document.getElementById("duplabelphone").style.color = "green";
 			document.getElementById("duplabelphone").innerHTML = "Phone number is valid";}

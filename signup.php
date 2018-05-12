@@ -9,10 +9,10 @@ echo "Connected Successfully";
 if( isset($_POST["register"]) ){
 		
 		$username = $_POST["username"];
-		$phone = $_POST["phone"];
+		$phone = $_POST["intno"].$_POST["phone"];
 		$email = $_POST["email"];
 		$password = $_POST["password"];
-		$emergencyPhone = $_POST["emerPhone"];
+		$emergencyPhone = $_POST["intno"].$_POST["emerPhone"];
 		$emergencyName = $_POST["emerName"];
   
 
