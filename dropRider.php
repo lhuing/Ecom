@@ -16,12 +16,14 @@ if(isset($_SESSION['loginUser'])) {
 //getting id from url
   $bookingID = $_GET['bookingID'];
 $driverPhone = $_SESSION['loginUser'];
+$info_userPhone = $_SESSION['userPhone'];
  
 $sql = "UPDATE driver SET driverStatus ='Idle' WHERE driverPhone ='$driverPhone'";
 		
 if ($conn->multi_query($sql) === TRUE) {
     echo "New record created successfully ";
-	header("Location: http://localhost/ridenow/acceptRider.php");
+   
+	header("Location: http://localhost/ridenow/moneyCharged.php");
 	
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

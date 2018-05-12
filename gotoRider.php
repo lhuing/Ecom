@@ -48,7 +48,7 @@ if(isset($_SESSION['loginUser'])) {
   }
 
         $phone = $_SESSION['loginUser'];
-        $get_info= "SELECT user.username, booking.phone, booking.current, booking.destination FROM user INNER JOIN booking ON user.phone = booking.phone order by bookingID desc limit 1";
+        $get_info= "SELECT user.username, booking.phone, booking.current, booking.destination FROM user INNER JOIN booking ON user.phone = booking.phone WHERE driverPhone = $phone ORDER by bookingID desc limit 1";
 
         $run_getrider = mysqli_query($conn,$get_info);
         
@@ -59,7 +59,7 @@ if(isset($_SESSION['loginUser'])) {
         $info_userPhone = $res['phone'];
         $info_current = $res['current'];
         $info_destination = $res['destination'];
-        
+        $_SESSION['userPhone'] = $info_userPhone;
 echo "
         
                     <tbody>
@@ -87,20 +87,20 @@ echo "
                         </tr>
                         </tbody>
                         ";?>
-
-<input type="button" name="dropRider" value="Drop" onclick="dropRider()">
+<input type="button" name="dropRider" value="Drop" onclick="dropRider()"> 
 
     </table>
 </div>
 
     <div id="map"></div>
+
 <script>
  function dropRider() {
   
   
-  var r = confirm("Is your rider reach his destination?");
-  if (r == true) {
-
+  var d = confirm("Is your rider reaching his destination?");
+  if (d == true) {
+  
    window.location.replace("dropRider.php");
 }
    else {
