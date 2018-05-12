@@ -42,14 +42,14 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<h2 class="tittle"><img src="images/cab.png" alt=""><span>Book Cab Now</span></h2>
 			<div class="book-form">
 
-			    <form action="signup.php" method="post">
+			    <form action="signup.php" method="post" onsubmit="return validation()">
 										
 					<div class="form-date-w3-agileits">
 						<div class="form-agileits">
 							<label> Username :</label>
 						</div>
 						<div class="form-agileits-2">
-							<input type="text" name="username" placeholder="Enter Username" required="">
+							<input type="text" name="username" id="username" placeholder="Enter Username" required="">
 						</div>
 						<div class="clear"> </div>
 					</div>
@@ -80,7 +80,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 							<label> Password :</label>
 						</div>
 						<div class="form-agileits-2">
-							<input type="password" name="password" placeholder="Enter Password" required="">
+							<input type="password" name="password" id="password" placeholder="Enter Password" required="">
 						</div>
 						<div class="clear"> </div>
 					</div>
@@ -91,7 +91,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 							<label> Emergency Contact <br> Phone Number:</label>
 						</div>
 						<div class="form-agileits-2">
-							<input type="text" name="emerPhone" placeholder="Enter Emergency Contact Number" required="">
+							<input type="text" name="emerPhone" id="emerPhone" placeholder="Enter Emergency Contact Number" required="">
 						</div>
 						<div class="clear"> </div>
 					</div>
@@ -101,7 +101,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 							<label> Emergency Contact <br> Name:</label>
 						</div>
 						<div class="form-agileits-2">
-							<input type="text" name="emerName" placeholder="Enter Emergency Contact Name" required="">
+							<input type="text" name="emerName" id="emerName" placeholder="Enter Emergency Contact Name" required="">
 						</div>
 						<div class="clear"> </div>
 					</div>
@@ -119,7 +119,35 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 	<!-- js-scripts-->
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-		
+	
+<script>
+function validation(){
+	var username = $("#username").val();
+	var phone = $("#phone").val();
+	var phonelabel = document.getElementById("duplabelphone").textContent;
+	var label = "Phone number is valid";
+	var email = $("#email").val();
+	var password = $("#password").val();
+	var emerPhone = $("#emerPhone").val();
+	var emerName = $("#emerName").val();
+
+	if (username == '' || phone == '' || email == '' || password == '' || emerPhone == '' || emerName == '') {
+				alert("Please fill in all the fields");
+				return false;
+				
+				} else if (!(phonelabel==label)) {
+				alert("Phone number has been used");
+				return false;
+				} else if ((password.length) < 6) {
+				alert("Password should at least 6 character in length");
+				return false;
+				} 
+
+
+}
+</script>
+
+
 	<script>
 function checkdupphone() {
     var phone = $("#phone").val();
@@ -138,7 +166,8 @@ function checkdupphone() {
 			document.getElementById("duplabelphone").style.color = "red";
 			document.getElementById("duplabelphone").innerHTML = "Phone number must be more than 9 digits";
 			}
-			else {document.getElementById("duplabelphone").style.color = "green";
+			else {
+			document.getElementById("duplabelphone").style.color = "green";
 			document.getElementById("duplabelphone").innerHTML = "Phone number is valid";}
 			}
 			else if(data == "true"){
