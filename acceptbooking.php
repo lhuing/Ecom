@@ -25,5 +25,9 @@ $conn->close();
 <html>
 <body>
 	<h1>Heading to your rider's location</h1>
+	<form action="pickRider.php" method="post">
+	<input type="submit" name="pickRider" value="Pick">
+	<input type="submit" name="cancel" value="Cancel">
+</form>
 	</body>
 </html>
