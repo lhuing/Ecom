@@ -15,6 +15,7 @@ if(isset($_SESSION['loginUser'])) {
 //getting id from url
 $bookingID = $_GET['bookingID'];
 $driverPhone = $_SESSION['loginUser'];
+$_SESSION['bookingID'] = $bookingID;
  
 //selecting data associated with this particular id
 $result = mysqli_query($conn, "UPDATE booking SET pickupStatus='Picked', driverPhone='$driverPhone' WHERE bookingID=$bookingID");

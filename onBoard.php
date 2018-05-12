@@ -1,6 +1,7 @@
 <html>
 <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="refresh" content="3; URL='http://localhost/ridenow/dropoffStatus.php'"/>
     <meta charset="utf-8">
     <title>Directions service</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -60,6 +61,9 @@ if(isset($_SESSION['loginUser'])) {
         $info_carType = $res['carType'];
         $info_platNo = $res['platNo'];
         $info_colour = $res['colour'];
+
+        $_SESSION['driverName'] = $info_driverName;
+        $_SESSION['driverPhone'] = $info_driverPhone;
         
 echo "
         

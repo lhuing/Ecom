@@ -44,9 +44,9 @@ $conn = OpenCon();
 
 session_start();
 if(isset($_SESSION['loginUser'])) {
-//  echo "Your session is running " . $_SESSION['loginUser'];
+  echo "Your session is running " . $_SESSION['loginUser'];
   }
-
+$bookingID = $_SESSION['bookingID'];
         $phone = $_SESSION['loginUser'];
         $get_info= "SELECT user.username, booking.phone, booking.current, booking.destination FROM user INNER JOIN booking ON user.phone = booking.phone WHERE driverPhone = $phone ORDER by bookingID desc limit 1";
 

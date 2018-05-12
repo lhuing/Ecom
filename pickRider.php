@@ -15,7 +15,7 @@ if(isset($_SESSION['loginUser'])) {
 
 //getting id from url
   if (isset($_POST["pickRider"])) {
-$bookingID = $_GET['bookingID'];
+$bookingID = $_SESSION['bookingID'];
 $driverPhone = $_SESSION['loginUser'];
  
 $sql = "UPDATE driver SET driverStatus ='Unavailable' WHERE driverPhone ='$driverPhone'";
@@ -26,7 +26,7 @@ if ($conn->multi_query($sql) === TRUE) {
 	
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
-	header("Location: http://localhost/ridenow/acceptBooking.php");
+	header("Location: http://localhost/ridenow/acceptRider.php");
 	
 	
 }
